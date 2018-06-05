@@ -1,0 +1,13 @@
+version: "2"
+services:
+  jupyterlab:
+    build:
+      context: .
+    ports:
+      - "80:8888"
+    volumes:
+      - "./work:/home/jovyan/work"
+    environment:
+      JUPYTER_ENABLE_LAB: 1
+    command: start.sh jupyter lab
+    
